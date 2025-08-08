@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head><title>API Fetch</title></head>
+<link rel="stylesheet" href="style.css">
+<body>
+  <h2>Random User</h2>
+  <button onclick="getUser()">Get User</button>
+  <div id="userInfo"></div>
+
+  <script>
+    async function getUser() {
+      const res = await fetch("https://randomuser.me/api/");
+      const data = await res.json();
+      const user = data.results[0];
+      document.getElementById("userInfo").innerHTML = `
+        <p>Name: ${user.name.first} ${user.name.last}</p>
+        <img src="${user.picture.medium}">
+      `;
+    }
+  </script>
+</body>
+</html>

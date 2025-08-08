@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>DOM Manipulation</title></head>
+<link rel="stylesheet" href="style.css">
+<body>
+  <h2 id="heading">Hello!</h2>
+  <button onclick="changeText()">Change Text</button>
+
+  <script>
+    function changeText() {
+      document.getElementById("heading").innerText = "Text has been changed!";
+    }
+  </script>
+</body>
+</html>
